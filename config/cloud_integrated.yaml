@@ -1,0 +1,36 @@
+cloud_integrator_node:
+  ros__parameters:
+    input_topic: "/livox/lidar"
+    output_topic: "/cloud_integrated"
+    frame_id: "livox_frame"
+    window_sec: 0.1        # 积分窗口（可调）
+
+armor_judge_node:
+  ros__parameters:
+    offline:
+      enable: true
+      video_path: "/home/abc/armor_judge_cpp3/2.7.ChangZhou.mp4"
+      fps: 60.0
+    serial:
+      enable: false
+      port: "/dev/ttyACM0"
+    aim:
+      buffer_size: 30
+      camera_fps: 60.0
+      integrate_window: 0.1  # 点云积分的参数积分窗口时间
+    camera:
+      fx: 1000.0
+      fy: 1000.0
+      cx: 640.0
+      cy: 512.0
+      k1: 0.0
+      k2: 0.0
+      p1: 0.0
+      p2: 0.0
+      image_width: 1280
+      image_height: 1024
+    extrinsic:
+      lidar_frame: "livox_frame"
+      camera_frame: "camera_link"
+      extrinsic_r: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+      extrinsic_t: [0.0, 0.0, 0.0]

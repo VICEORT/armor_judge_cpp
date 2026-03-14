@@ -1,0 +1,21 @@
+# 编译生成的文件
+build/
+install/
+log/
+*.o
+*.so
+*.a
+
+# 视频文件（如果你不想上传大文件）
+*.mp4
+*.avi
+*.mov
+
+# IDE配置
+.vscode/
+.idea/
+
+# 临时文件
+*~
+*.swp
+*.swo
